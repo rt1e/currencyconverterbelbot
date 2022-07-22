@@ -1,0 +1,6 @@
+.gitignore
+*/tests
+*/dist
+*/config.py
+Dockerfile
+.dockerignore
