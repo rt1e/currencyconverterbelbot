@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: "f96ca494-f3af-4f80-8d76-8762560b76ab"
+          heroku_app_name: "currencyconverterbelbot" #Must be unique in Heroku
+          heroku_email: "kel657@mail.ru"
+          usedocker: true
