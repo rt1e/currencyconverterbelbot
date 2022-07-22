@@ -1,16 +1,13 @@
-## currencyconverterbelbot
+**currencyconverterbelbot**
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-3810/) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![PyPI](https://img.shields.io/pypi/v/currencyconverterbelbot)](https://pypi.org/project/currencyconverterbelbot/)
 
-## description
+**Description**
 
 Bot showing exchange rates of Belarusian banks (Long Poll)
 
-## how to use
+**how to use**
 
-- [currencyconverterbelbot](#currencyconverterbelbot)
-- [description](#description)
-- [how to use](#how-to-use)
 - [clone or fork this repo](#clone-or-fork-this-repo)
 - [install from pypi](#install-from-pypi)
 - [run as docker container](#run-as-docker-container)
