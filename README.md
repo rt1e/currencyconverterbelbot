@@ -8,6 +8,13 @@ Bot showing exchange rates of Belarusian banks (Long Poll)
 
 ## how to use
 
+- [currencyconverterbelbot](#currencyconverterbelbot)
+- [description](#description)
+- [how to use](#how-to-use)
+- [clone or fork this repo](#clone-or-fork-this-repo)
+- [install from pypi](#install-from-pypi)
+- [run as docker container](#run-as-docker-container)
+
 ## clone or fork this repo
 
 - edit the ```config.py``` in folder ```currencyconverterbelbot``` (enter your bot token received from @BotFather to access the HTTP API) or define the TO:KEN as an argument
