@@ -3,3 +3,4 @@ tests
 config.py
 __pycache__
 dist
+config_local.py

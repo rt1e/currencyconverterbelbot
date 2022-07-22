@@ -1,6 +1,6 @@
 .gitignore
 */tests
 */dist
-*/config.py
 Dockerfile
 .dockerignore
+*/config_local.py
