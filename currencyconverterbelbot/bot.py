@@ -1,5 +1,8 @@
 # variables url, TOKEN are stored in the config file
+# -*- coding: UTF-8 -*-
 
+import sys
+import argparse
 import requests
 import logging
 import typing
@@ -11,6 +14,28 @@ from aiogram.types import Message
 from aiogram.utils.callback_data import CallbackData
 
 from config import *
+
+url = "https://myfin.by/currency/brest"
+
+
+def createParser():
+    parser = argparse.ArgumentParser(
+        prog="bot",
+        description="""The bot receives current exchange rates 
+        from the site https://myfin.by/currency/brest, you only need to specify the bot token
+        """,
+        epilog="""(c) 2022. Telegram Bot (Long Poll)""",
+    )
+    parser.add_argument(
+        "-t",
+        "--token",
+        required=True,
+        help="""enter your bot token received from @BotFather to access the HTTP API or
+        add config.py in folder with main program view token TOKEN = "TO:KEN",
+        metavar="TO:KEN""",
+    )
+
+    return parser
 
 
 def get_currency_from_bank(id: int):
@@ -24,7 +49,23 @@ def get_currency_from_bank(id: int):
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
+
+parser = createParser()
+namespace = parser.parse_args(sys.argv[1:])
+try:
+    if namespace.token == "TOKEN":
+        bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
+        print(
+            "TO:KEN taken from file config.py, specify the token as an argument, example -t TOKEN"
+        )
+    else:
+        bot = Bot(token=namespace.token, parse_mode=types.ParseMode.HTML)
+except:
+    print(
+        "define the TO:KEN as an argument or define TO:KEN in config.py, see the help"
+    )
+    sys.exit()
+
 dp = Dispatcher(bot)
 
 r = requests.get(url)

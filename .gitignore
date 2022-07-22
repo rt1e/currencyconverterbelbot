@@ -2,3 +2,4 @@ config.py
 tests
 config.py
 __pycache__
+dist
